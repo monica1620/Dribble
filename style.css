@@ -1,0 +1,162 @@
+/* Custom Variables */
+:root {
+    --dribbble-pink: #ea4c89;
+    --hover-overlay: rgba(0, 0, 0, 0.5);
+}
+
+/* General Styles */
+body {
+    background-color: #f8f8f8;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Navbar Customization */
+.navbar {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    max-height: 24px;
+}
+
+.btn-pink {
+    background-color: var(--dribbble-pink);
+    color: white;
+    border: none;
+}
+
+.btn-pink:hover {
+    background-color: #e23177;
+    color: white;
+}
+
+/* Search Bar */
+.input-group .form-control {
+    border-radius: 20px;
+    padding-left: 40px;
+}
+
+.input-group .input-group-text {
+    position: absolute;
+    z-index: 4;
+    border: none;
+    background: transparent;
+    padding-left: 15px;
+}
+
+/* Filters */
+.filters .nav-link {
+    color: #6e6d7a;
+    font-weight: 500;
+}
+
+.filters .nav-link.active {
+    color: #0d0c22;
+    position: relative;
+}
+
+.filters .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background-color: var(--dribbble-pink);
+}
+
+/* Shot Items */
+.shot-item {
+    margin-bottom: 24px;
+}
+
+.shot-preview {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.shot-preview img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.shot-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--hover-overlay);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.shot-item:hover .shot-overlay {
+    opacity: 1;
+}
+
+.shot-item:hover .shot-preview img {
+    transform: scale(1.05);
+}
+
+.shot-title {
+    color: white;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.shot-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Card Customization */
+.card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-body {
+    padding: 12px;
+}
+
+/* Badges */
+.badge.bg-pro {
+    background-color: var(--dribbble-pink);
+    color: white;
+    font-weight: 400;
+    font-size: 0.7rem;
+}
+
+.badge.bg-team {
+    background-color: #0d0c22;
+    color: white;
+    font-weight: 400;
+    font-size: 0.7rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .shot-item {
+        margin-bottom: 16px;
+    }
+    
+    .filters .nav {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+}
